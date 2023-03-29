@@ -63,7 +63,7 @@ export default class Yatzy {
   }
 
   static score_pair(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    var counts = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var counts = [0, 0, 0, 0, 0, 0];
     counts[d1 - 1]++;
     counts[d2 - 1]++;
     counts[d3 - 1]++;
@@ -75,7 +75,7 @@ export default class Yatzy {
   }
 
   static two_pair(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    var counts = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    var counts = [0, 0, 0, 0, 0, 0];
     counts[d1 - 1]++;
     counts[d2 - 1]++;
     counts[d3 - 1]++;
@@ -94,7 +94,7 @@ export default class Yatzy {
 
   static four_of_a_kind(_1: number, _2: number, d3: number, d4: number, d5: number): number {
     var tallies;
-    tallies = [0, 0, 0, 0, 0, 0, 0, 0];
+    tallies = [0, 0, 0, 0, 0, 0];
     tallies[_1 - 1]++;
     tallies[_2 - 1]++;
     tallies[d3 - 1]++;
@@ -106,7 +106,7 @@ export default class Yatzy {
 
   static three_of_a_kind(d1: number, d2: number, d3: number, d4: number, d5: number): number {
     var t;
-    t = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+    t = [0, 0, 0, 0, 0, 0];
     t[d1 - 1]++;
     t[d2 - 1]++;
     t[d3 - 1]++;
@@ -118,7 +118,7 @@ export default class Yatzy {
 
   static smallStraight(d1: number, d2: number, d3: number, d4: number, d5: number): number {
     var tallies;
-    tallies = [0, 0, 0, 0, 0, 0, 0];
+    tallies = [0, 0, 0, 0, 0, 0];
     tallies[d1 - 1] += 1;
     tallies[d2 - 1] += 1;
     tallies[d3 - 1] += 1;
@@ -130,7 +130,7 @@ export default class Yatzy {
 
   static largeStraight(d1: number, d2: number, d3: number, d4: number, d5: number): number {
     var tallies;
-    tallies = [0, 0, 0, 0, 0, 0, 0, 0];
+    tallies = [0, 0, 0, 0, 0, 0];
     tallies[d1 - 1] += 1;
     tallies[d2 - 1] += 1;
     tallies[d3 - 1] += 1;
@@ -148,7 +148,7 @@ export default class Yatzy {
     var _3 = false;
     var _3_at = 0;
 
-    tallies = [0, 0, 0, 0, 0, 0, 0, 0];
+    tallies = [0, 0, 0, 0, 0, 0];
     tallies[d1 - 1] += 1;
     tallies[d2 - 1] += 1;
     tallies[d3 - 1] += 1;
