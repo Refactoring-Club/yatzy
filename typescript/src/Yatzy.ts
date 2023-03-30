@@ -31,24 +31,15 @@ export default class Yatzy {
   }
 
   static ones(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    var sum = 0;
-    if (d1 == 1) sum++;
-    if (d2 == 1) sum++;
-    if (d3 == 1) sum++;
-    if (d4 == 1) sum++;
-    if (d5 == 1) sum++;
+    const dice = [d1, d2, d3, d4, d5].filter((d) => d === 1);
 
-    return sum;
+    return Yatzy.sum(...dice);
   }
 
   static twos(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    var sum = 0;
-    if (d1 == 2) sum += 2;
-    if (d2 == 2) sum += 2;
-    if (d3 == 2) sum += 2;
-    if (d4 == 2) sum += 2;
-    if (d5 == 2) sum += 2;
-    return sum;
+    const dice = [d1, d2, d3, d4, d5].filter((d) => d === 2);
+
+    return Yatzy.sum(...dice);
   }
 
   static threes(d1: number, d2: number, d3: number, d4: number, d5: number): number {
