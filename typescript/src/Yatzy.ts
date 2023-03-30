@@ -30,27 +30,22 @@ export default class Yatzy {
     return 0;
   }
 
-  static ones(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    const dice = [d1, d2, d3, d4, d5].filter((d) => d === 1);
+  static upperSectionScoreBySide(side: number, ...dice: number[]) {
+    const matches = dice.filter((d) => d === side);
 
-    return Yatzy.sum(...dice);
+    return Yatzy.sum(...matches);
+  }
+
+  static ones(d1: number, d2: number, d3: number, d4: number, d5: number): number {
+    return Yatzy.upperSectionScoreBySide(1, d1, d2, d3, d4, d5);
   }
 
   static twos(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    const dice = [d1, d2, d3, d4, d5].filter((d) => d === 2);
-
-    return Yatzy.sum(...dice);
+    return Yatzy.upperSectionScoreBySide(2, d1, d2, d3, d4, d5);
   }
 
   static threes(d1: number, d2: number, d3: number, d4: number, d5: number): number {
-    var s;
-    s = 0;
-    if (d1 == 3) s += 3;
-    if (d2 == 3) s += 3;
-    if (d3 == 3) s += 3;
-    if (d4 == 3) s += 3;
-    if (d5 == 3) s += 3;
-    return s;
+    return Yatzy.upperSectionScoreBySide(3, d1, d2, d3, d4, d5);
   }
 
   static score_pair(d1: number, d2: number, d3: number, d4: number, d5: number): number {
@@ -163,26 +158,14 @@ export default class Yatzy {
   }
 
   fours(): number {
-    var sum;
-    sum = 0;
-    for (let at = 0; at != 5; at++) {
-      if (this.dice[at] == 4) {
-        sum += 4;
-      }
-    }
-    return sum;
+    return Yatzy.upperSectionScoreBySide(4, ...this.dice);
   }
 
   fives(): number {
-    let s = 0;
-    var i;
-    for (i = 0; i < this.dice.length; i++) if (this.dice[i] == 5) s = s + 5;
-    return s;
+    return Yatzy.upperSectionScoreBySide(5, ...this.dice);
   }
 
   sixes(): number {
-    let sum = 0;
-    for (var at = 0; at < this.dice.length; at++) if (this.dice[at] == 6) sum = sum + 6;
-    return sum;
+    return Yatzy.upperSectionScoreBySide(6, ...this.dice);
   }
 }
