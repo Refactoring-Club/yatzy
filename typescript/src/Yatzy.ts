@@ -20,13 +20,11 @@ export default class Yatzy {
     return Yatzy.sum(d1, d2, d3, d4, d5);
   }
 
-  static yatzy(...args: number[]): number {
-    var counts = [0, 0, 0, 0, 0, 0, 0, 0];
-    for (var i = 0; i != args.length; ++i) {
-      var die = args[i];
-      counts[die - 1]++;
-    }
-    for (i = 0; i != 6; i++) if (counts[i] == 5) return 50;
+  static yatzy(...dice: number[]): number {
+    if (dice.filter((side) => side === dice[0]).length === dice.length) {
+      return 50;
+    };
+
     return 0;
   }
 
