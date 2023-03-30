@@ -1,0 +1,12 @@
+NOTES
+
+* Stevie doesn't like the repetitive adding to total in chance!
+* Every method has the same parameters which are ALL FIVE die.
+* We don't often see a 'y' in code!
+* Why are there 9 counts in `score_pair`? 
+* So many small inconsistencies! (tallies, t, counts, etc.)
+* Using `var` - lots of reassignment and mutation, some `let`s
+* Why are there so many random methods that aren't being used.
+* static v instance methods - should pick one. Neither? Abstraction?
+* can we wrestle d1...d5?
+* TWL: rest is the opposite of spread
